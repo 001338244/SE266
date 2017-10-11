@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="RandomColor">
+  <component name="PublishConfigData" serverName="RandomColorGrid">
     <serverData>
-      <paths name="RandomColor">
+      <paths name="RandomColorGrid">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
