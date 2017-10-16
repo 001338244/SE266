@@ -50,3 +50,18 @@ if ($submit == "do it"){
     Fixed: <input type="checkbox" name="fixed" value="true" /><br />
     <input type="submit" name="submit" value="do it" />
 </form>
+
+<?php
+
+$sql = $db->prepare("SELECT * FROM animals");
+$sql->execute();
+$results = $sql->fetchAll(PDO::FETCH_ASSOC);
+if ( count($results) ) {
+    foreach ($results as $dog) {
+
+        print_r($dog);
+
+    }
+
+}
+?>
