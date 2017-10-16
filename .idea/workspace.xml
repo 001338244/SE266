@@ -27,8 +27,8 @@
       <file leaf-file-name="phpDemo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wk2demo/phpDemo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="37" column="24" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="37" selection-end-column="24" />
               <folding>
                 <marker date="1508168371544" expanded="true" signature="902:958" ph="INSERT INTO animals... " />
                 <marker date="1508168371544" expanded="true" signature="1597:1618" ph="SELECT * FRO... animals" />
@@ -50,8 +50,18 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wk3demo/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <state relative-caret-position="153">
+              <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dogform.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wk3demo/assets/dogform.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,11 +70,13 @@
       <file leaf-file-name="dogs.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wk3demo/assets/dogs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="272">
+              <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
               <folding>
-                <marker date="1508172723917" expanded="true" signature="165:186" ph="SELECT * FRO... animals" />
-                <marker date="1508172723917" expanded="true" signature="414:626" ph="..." />
+                <element signature="n#getDogsAsTable#0;n#!!top" expanded="false" />
+                <marker date="1508176064635" expanded="true" signature="165:186" ph="SELECT * FRO... animals" />
+                <marker date="1508176064635" expanded="true" signature="414:626" ph="..." />
+                <marker date="1508176064635" expanded="true" signature="1056:1113" ph="INSERT INTO animals... " />
               </folding>
             </state>
           </provider>
@@ -114,6 +126,7 @@
         <option value="$PROJECT_DIR$/wk3demo/assets/header.php" />
         <option value="$PROJECT_DIR$/wk3demo/assets/footer.php" />
         <option value="$PROJECT_DIR$/wk3demo/assets/dbcon.php" />
+        <option value="$PROJECT_DIR$/wk3demo/assets/dogform.php" />
         <option value="$PROJECT_DIR$/wk3demo/assets/dogs.php" />
         <option value="$PROJECT_DIR$/wk3demo/index.php" />
       </list>
@@ -212,12 +225,12 @@
       <workItem from="1507138340494" duration="3731000" />
       <workItem from="1507735500835" duration="684000" />
       <workItem from="1507741705797" duration="6745000" />
-      <workItem from="1508167311066" duration="5027000" />
+      <workItem from="1508167311066" duration="8294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16187000" />
+    <option name="totallyTimeSpent" value="19454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -249,7 +262,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -296,14 +311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wk3demo/assets/dbcon.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wk3demo/assets/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -322,10 +329,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wk3demo/assets/dbcon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wk2demo/phpDemo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="544">
+          <caret line="37" column="24" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="37" selection-end-column="24" />
           <folding>
             <marker date="1508168371544" expanded="true" signature="902:958" ph="INSERT INTO animals... " />
             <marker date="1508168371544" expanded="true" signature="1597:1618" ph="SELECT * FRO... animals" />
@@ -333,21 +348,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wk3demo/assets/dogform.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wk3demo/assets/dogs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        <state relative-caret-position="272">
+          <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
           <folding>
-            <marker date="1508172723917" expanded="true" signature="165:186" ph="SELECT * FRO... animals" />
-            <marker date="1508172723917" expanded="true" signature="414:626" ph="..." />
+            <element signature="n#getDogsAsTable#0;n#!!top" expanded="false" />
+            <marker date="1508176064635" expanded="true" signature="165:186" ph="SELECT * FRO... animals" />
+            <marker date="1508176064635" expanded="true" signature="414:626" ph="..." />
+            <marker date="1508176064635" expanded="true" signature="1056:1113" ph="INSERT INTO animals... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wk3demo/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="2" lean-forward="true" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        <state relative-caret-position="153">
+          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="36" />
           <folding />
         </state>
       </provider>
