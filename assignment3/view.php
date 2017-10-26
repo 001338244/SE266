@@ -7,9 +7,10 @@
  */include_once ("assets/header.php");
 include_once ("assets/dbconn.php");
 require_once ("assets/functionsToGetStuffDone.php");
-$corp = 'corp';
+
 $db = dbconn();
-$id = $corpz[id];
+
+$id = filter_input(INPUT_GET, 'id');
 
 echo getCorp($db, $id);
 include_once ("assets/footer.php");
