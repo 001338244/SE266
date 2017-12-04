@@ -1,33 +1,27 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: calexander
- * Date: 10/29/17
- * Time: 5:09 PM
+ * User: 001338244
+ * Date: 11/1/2017
+ * Time: 1:55 PM
  */
+include_once ("assets/header.html");
+include_once ("assets/dbconn.php");
+require_once ("assets/functionsToGetStuffDone.php");
 
-// Database driven app, so...
-require_once ('assets/dbconn.php');
-require_once ('assets/employees.php');
-require_once ('assets/employeeViews.php');
-require_once ('assets/departments.php');
-$db = getDB();
+$db = dbconn();
 
-// get the data from user, if any
 $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING) ??
     filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING) ?? NULL;
 $col = filter_input(INPUT_GET, 'col', FILTER_SANITIZE_STRING) ?? NULL;
 $dir = filter_input(INPUT_GET, 'dir', FILTER_SANITIZE_STRING) ?? NULL;
 
-include_once ('assets/header.php');
-
-// control based on the action indicated by the user
 switch ($action) {
     case 'sort':
         $sortable = true;
-        $employees = getEmployeesAsSortedTable($db, $col, $dir);
-        $cols = getColumnNames($db, 'employees');
-        echo getEmployeesAsSortedTable($db, $employees, $cols, $sortable);
+        $corps = getCorpsAsSortedTable($db, $col, $dir);
+        $cols = getColumnNames($db, 'corps');
+        echo getCorpsAsSortedTable($db, $corps, $col);
         break;
     case 'Read':
 
@@ -62,9 +56,16 @@ switch ($action) {
         break;
     default:
         $sortable = true;
-        $employees = getEmployees($db);
-        $cols = getColumnNames($db, 'employees');
-        echo getEmployeesAsTable($db, $employees, $cols, $sortable);
+        $corps = getCorps($db);
+        $cols = getColumnNames($db, 'corps');
+        echo getCorpsAsTable($db, $corps, $cols, $sortable);
         break;
+
 }
-include_once ('assets/footer.php');
+
+
+
+
+
+include_once ("assets/footer.php");
+?>

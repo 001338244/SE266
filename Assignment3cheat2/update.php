@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Update</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <?php
+        
+        include_once './dbconnect.php';
+        include_once './functions.php';
+        
+        $db = getDatabase();
+        
+        $corp = '';
+        $incorp_dt = '';
+		$email = '';
+		$zipcode = '';
+		$owner = '';
+		$phone = '';
+        
+		// Insert Updates to the database. ##
+        if ( isPostRequest() ) {
+			
+            $id = filter_input(INPUT_POST, 'i-d');
+            $corp = filter_input(INPUT_POST, 'n_corp');
+            $incorp_dt = date("Y-m-d H:i:s");
+			$email = filter_input(INPUT_POST, 'n_email');
+			$zipcode = filter_input(INPUT_POST, 'n_zipcode');
+			$owner = filter_input(INPUT_POST, 'n_owner');
+			$phone = filter_input(INPUT_POST, 'n_phone');
+                                   
+            $stmt = $db->prepare("UPDATE corps SET corp = :corp, incorp_dt = :incorp_dt, email = :email, zipcode = :zipcode, owner = :owner, phone = :phone WHERE id = :id");
+            
+            $binds = array(
+                ":id" => $id,
+                ":corp" => $corp,
+                ":incorp_dt" => $incorp_dt,
+				":email" => $email,
+				":zipcode" => $zipcode,
+				":owner" => $owner,
+				":phone" => $phone
+            );
+            
+            $message = 'Update failed';
+            if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+               $message = 'Update Complete';
+            }
+            
+            
+        } else {
+            $id = filter_input(INPUT_GET, 'id');
+        }
+        
+		// Grab data from the database. ##
+        $stmt = $db->prepare("SELECT * FROM corps where id = :id");
+
+        $binds = array(
+             ":id" => $id
+         );
+
+         $result = array();
+         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            $corp = $result['corp'];
+            $incorps_dt = $result['incorps_dt'];
+			$email =  $result['email'];
+			$zipcode = $result['zipcode'];
+			$owner = $result['owner'];
+			$phone = $result['phone'];
+         } else {
+            header('Location: view.php');
+            die('ID not found');
+         }
+        
+        
+        ?>
+        <!-- Form and text fields -->
+        <form method="post" action="#">
+			<h4>
+            Corporation: <br /><input type="text" class="input-sm" name="n_corp" style="font-size:14pt;height:30px;width:500px;" value="<?php echo $corp ?>" />
+            <br /><br />
+            Email: <br /><input type="text" class="input-sm" name="n_email" style="font-size:14pt;height:30px;width:500px;" value="<?php echo $email ?>" />
+            <br /><br />
+			Zip Code: <br /><input type="text" class="input-sm" name="n_zipcode" style="font-size:14pt;height:30px;width:500px;" value="<?php echo $zipcode ?>" />
+            <br /><br />
+			Owner: <br /><input type="text" class="input-sm" name="n_owner" style="font-size:14pt;height:30px;width:500px;" value="<?php echo $owner ?>" />
+            <br /><br />
+			Phone: <br /><input type="text" class="input-sm" name="n_phone" style="font-size:14pt;height:30px;width:500px;" value="<?php echo $phone ?>" />
+            <br /><br />
+            <input type="hidden" name="i-d" value="<?php echo $id ?>" />
+            <input type="submit" class="btn btn-warning" value="Update" />
+			</h4>
+        </form>
+		
+		<!-- Back to view page -->
+        <a href="view.php" class="btn btn-danger">Go back</a>
+        
+		<h3 class="bg-success">
+            <?php if ( isset($message) ) { echo $message; } ?>
+        </h3>
+    </body>
+</html>

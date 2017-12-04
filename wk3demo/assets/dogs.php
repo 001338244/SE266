@@ -41,7 +41,6 @@ function getDogsAsTable($db)
             print_r($dog);
 
         }
-
     }*/
 }
 
@@ -58,4 +57,11 @@ function addDog($db, $name, $gender, $fixed) {
 
     }
 
+}
+
+function getDog($db, $id){
+    $sql = $db->prepare("SELECT * FROM animals WHERE id =:id");
+    $sql->bindParam(':id', $id, PDO::PARAM_INT);
+    $sql->execute();
+    return $sql->fetch(PDO::FETCH_ASSOC);
 }
